@@ -18,7 +18,11 @@ public class A10_permutationOfString {
     }
 
     static String swap(String str , int i , int j){
-        str.
+        char[] arr = str.toCharArray();
+        char temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        return new String(arr);
     }
 
     public static void main(String[] args) {
