@@ -3,10 +3,12 @@ package DSAONE;
 // that all the queens are safe i.e.,
 // There is no queen adjacent to other queen - horizontally , vertically , diagonally.,
 public class A11_nQueensBacktracking {
-    static int N = 3;
+    static int N = 4;
 
     static boolean nQueen(int[][] board , int row){
-        if(row == N) return true;
+        if(row == N){
+            return true;
+        }
 
         for(int col = 0 ; col < N ; col++){
             if(isSafe(board , row , col)){
@@ -29,7 +31,7 @@ public class A11_nQueensBacktracking {
             }
         }
         if(nQueen(board , 0)){
-            printBoard(board);
+//            printBoard(board);
         }else{
             System.out.println("Sorry the Queens cant be arranged in this board");
         }
@@ -49,18 +51,37 @@ public class A11_nQueensBacktracking {
         for(j = col + 1 ; j < N ; j++){
             if(arr[row][j] == 1) return false;
         }
-        for(i = 0, j = 0 ; i < row && j < row ; i++ , j++){
+
+
+        i = row;
+        j = col;
+        while(i >= 0 && j >= 0){
             if(arr[i][j] == 1) return false;
+            i--;
+            j--;
         }
-        for(i = row+1 , j = col+1 ; i < N && j < N ; i++ , j++){
+        i = row;
+        j = col;
+        while(i < N && j < N){
             if(arr[i][j] == 1) return false;
+            i++;
+            j++;
         }
-        for(i = 0 , j = N-1 ; i < row && j > col ; i++ , j--){
+        i = row;
+        j = col;
+        while(i >= 0 && j < N){
             if(arr[i][j] == 1) return false;
+            i--;
+            j++;
         }
-        for(i = N-1 , j = 0 ; i > row && j < col ; i-- , j++){
+        i = row;
+        j = col;
+        while(i < N && j >= 0){
             if(arr[i][j] == 1) return false;
+            i++;
+            j--;
         }
+
         return true;
     }
 
