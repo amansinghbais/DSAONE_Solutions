@@ -31,7 +31,7 @@ public class A11_nQueensBacktracking {
             }
         }
         if(nQueen(board , 0)){
-//            printBoard(board);
+            printBoard(board);
         }else{
             System.out.println("Sorry the Queens cant be arranged in this board");
         }
@@ -52,7 +52,6 @@ public class A11_nQueensBacktracking {
             if(arr[row][j] == 1) return false;
         }
 
-
         i = row;
         j = col;
         while(i >= 0 && j >= 0){
@@ -62,24 +61,10 @@ public class A11_nQueensBacktracking {
         }
         i = row;
         j = col;
-        while(i < N && j < N){
-            if(arr[i][j] == 1) return false;
-            i++;
-            j++;
-        }
-        i = row;
-        j = col;
         while(i >= 0 && j < N){
             if(arr[i][j] == 1) return false;
             i--;
             j++;
-        }
-        i = row;
-        j = col;
-        while(i < N && j >= 0){
-            if(arr[i][j] == 1) return false;
-            i++;
-            j--;
         }
 
         return true;
