@@ -13,10 +13,10 @@ public class A21_mergeSort {
     public static void mergeSort(int[] arr , int l  , int h){
         if(l < h){
             int mid = (l+h)/2;
-            mergeSort(arr , 0 , mid);
+            mergeSort(arr , l , mid);
             mergeSort(arr , mid+1 , h);
 
-            merge(arr , 0 , mid , h);
+            merge(arr , l , mid , h);
         }
     }
 
