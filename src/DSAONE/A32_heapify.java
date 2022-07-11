@@ -42,6 +42,7 @@ public class A32_heapify {
         }
     }
 
+    //-----------------------------------------------------------------------------------------------
     public static void main(String[] args) {
         int[] arr = {0 , 20 , 10 , 30 , 5 , 50 , 40};
 
@@ -54,7 +55,7 @@ public class A32_heapify {
         heapSort(arr , arr.length - 1);
         printArray(arr);
     }
-
+    //------------------------------------------------------------------------------------------------
     //Function to print the array
     public static void printArray(int[] arr){
         for(int i = 1 ; i < arr.length ; i++){
