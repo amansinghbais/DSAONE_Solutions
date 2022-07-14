@@ -49,7 +49,7 @@ public class A44_MaxAreaOfHistogram {
     }
 
     //Main Function which find the maximum element
-    public static void findMaximum(int[] arr){
+    public static int findMaximum(int[] arr){
         int[] left = prevSmaller(arr);
         int[] right = nextSmaller(arr);
 
@@ -58,14 +58,14 @@ public class A44_MaxAreaOfHistogram {
             area = arr[i] * (right[i] - left[i] - 1);
             maxArea  = Math.max(area , maxArea);
         }
-        System.out.println(maxArea);
+        return maxArea;
     }
 
 
     public static void main(String[] args) {
         int[] arr = {4,2,1,5,6,3,2,4,2};
 
-        findMaximum(arr);
+        System.out.print(findMaximum(arr));
 
     }
 }
