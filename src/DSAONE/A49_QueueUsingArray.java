@@ -1,5 +1,6 @@
 package DSAONE;
 
+//Queue Implementation using Array.
 class QueueUsingArray{
     int rear , capacity;
     int[] arr;
